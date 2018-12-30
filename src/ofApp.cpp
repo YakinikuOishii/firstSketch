@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    ofSetBackgroundColor(78,25,187);  //背景 r,g,b
 
 }
 
@@ -14,14 +15,14 @@ void ofApp::update(){
 void ofApp::draw(){
     ofDrawBitmapStringHighlight("Everything works!", 20, 20);
     ofDrawLine(10,10,100,100);
-    ofDrawCircle(200,200,100);
-    ofRectangle myRect;
-    myRect.x = 10;
-    myRect.y = 10;
-    myRect.width = 100;
-    myRect.height = 100;
+    ofDrawCircle(200,200,100); //円 x,y,半径
+    ofEnableAlphaBlending();
+    ofDrawRectRounded( 10, 10, 100, 100, 50 ); //角丸 x,y,width,height,radius
     
-    ofDrawRectRounded( myRect, 10, 20, 30, 40 );
+    ofEnableAlphaBlending();    // turn on alpha blending
+    ofSetColor(255,0,0,50);    // red, 50% transparent
+    ofDrawRectangle(20,20,100,100);
+    ofDisableAlphaBlending();   // アルファブレンディングを特定の図形にだけ適応させる(これ消すと全図形にアルファブレンディング適応)
 }
 
 //--------------------------------------------------------------
